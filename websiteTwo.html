@@ -8,12 +8,14 @@
 <body>
     <button>Post Message</button>
     <script>
+        let msgEvent;
         window.addEventListener("message", (event) => {
+            msgEvent = event;
             console.log("Website 2 Message triggered: ", event);
         })
 
         window.onbeforeunload = () => {
-            event.source.postMessage("Hello resulAK beforeunload triggered", "*")
+            msgEvent.source.postMessage("Hello resulAK beforeunload triggered", "*")
         }
 
         document.querySelector("button").addEventListener("click", () => {

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website 2</title>
+</head>
+<body>
+    <button>Post Message</button>
+    <script>
+        window.addEventListener("message", (event) => {
+            console.log("Website 2 Message triggered: ", event);
+
+            event.source.postMessage("Hello from website 2", "*")
+        })
+
+        document.querySelector("button").addEventListener("click", () => {
+            let websiteTwo = window.open("http://127.0.0.1:5500/websiteOne.html", '_blank')
+
+            websiteTwo.onload = () => {
+                console.log("Website Two loaded");
+            }
+        })
+    </script>
+</body>
+</html>

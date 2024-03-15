@@ -21,9 +21,13 @@
         document.querySelector("button").addEventListener("click", () => {
             let websiteTwo = window.open("https://akrepo.000webhostapp.com/websiteTwo.html", '_blank')
 
-            websiteTwo.onload = () => {
-                console.log("Website Two loaded");
-            }
+            // websiteTwo.onload = () => {
+            //     console.log("Website Two loaded");
+            // }
+
+            setTimeout(() => {
+                websiteTwo.postMessage("Hello From Github website", "*")
+            }, 6000)
         })
     </script>
 </body>

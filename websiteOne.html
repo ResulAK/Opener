@@ -14,9 +14,9 @@
             console.log("Website 2 Message triggered: ", event);
         })
 
-        window.onbeforeunload = () => {
-            msgEvent.source.postMessage("Hello resulAK beforeunload triggered", "*")
-        }
+        // window.onbeforeunload = () => {
+        //     msgEvent.source.postMessage("Hello resulAK beforeunload triggered", "*")
+        // }
 
         document.querySelector("button").addEventListener("click", () => {
             let websiteTwo = window.open("https://akrepo.000webhostapp.com/websiteTwo.html", '_blank')
